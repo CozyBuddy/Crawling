@@ -16,7 +16,7 @@ temp_profile_dir = tempfile.mkdtemp() # <- solution
 
 opt = webdriver.ChromeOptions()
 opt.add_argument(f"--user-data-dir={temp_profile_dir}")
-opt.add_argument('--headless')
+#opt.add_argument('--headless')
 opt.add_experimental_option("prefs", {
     "profile.managed_default_content_settings.images": 2,
     "profile.managed_default_content_settings.plugins": 2
@@ -48,22 +48,24 @@ while True :
     href_list = [el.get_attribute('href') for el in results]
    # href_list2 = [el.get_attribute('href') for el in results2]
     for a in href_list:
-      
-        browser.get(a)
-        time.sleep(5)
-        result3 = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div.article-text')))
-       
-        splitresult = [s.strip().replace('=','').replace('@','') for s in result3.text.split('\n') if s.strip() ]
+        try:
+            browser.get(a)
+            time.sleep(5)
+            result3 = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div.article-text')))
+        
+            splitresult = [s.strip().replace('=','').replace('@','') for s in result3.text.split('\n') if s.strip() ]
 
-        for i in splitresult:
-            if re.fullmatch(r"[가-힣.,!=?\"'()\ ]+", i) :
-                ws[f"A{excelnum+1}"] = i 
-                excelnum+=1
+            for i in splitresult:
+                if re.fullmatch(r"[가-힣.,!=?\"'()\ ]+", i) :
+                    ws[f"A{excelnum+1}"] = i 
+                    excelnum+=1
 
+        except Exception as e:
+            continue
     if num == 334 :
         break
-  
     num+=1
+
 
 num=1
 while True :
@@ -76,21 +78,22 @@ while True :
     href_list = [el.get_attribute('href') for el in results]
    # href_list2 = [el.get_attribute('href') for el in results2]
     for a in href_list:
-      
-        browser.get(a)
-        time.sleep(5)
-        result3 = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div.article-text')))
-        #print(result3.text)
-        splitresult = [s.strip().replace('=','').replace('@','') for s in result3.text.split('\n') if s.strip() ]
+        try:
+            browser.get(a)
+            time.sleep(5)
+            result3 = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div.article-text')))
+        
+            splitresult = [s.strip().replace('=','').replace('@','') for s in result3.text.split('\n') if s.strip() ]
 
-        for i in splitresult:
-            if re.fullmatch(r"[가-힣.,!=?\"'()\ ]+", i) :
-                ws[f"A{excelnum+1}"] = i 
-                excelnum+=1
+            for i in splitresult:
+                if re.fullmatch(r"[가-힣.,!=?\"'()\ ]+", i) :
+                    ws[f"A{excelnum+1}"] = i 
+                    excelnum+=1
 
+        except Exception as e:
+            continue
     if num == 334 :
         break
-
     num+=1
 
 
@@ -105,21 +108,22 @@ while True :
     href_list = [el.get_attribute('href') for el in results]
    # href_list2 = [el.get_attribute('href') for el in results2]
     for a in href_list:
-      
-        browser.get(a)
-   
-        result3 = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div.article-text')))
-        #print(result3.text)
-        splitresult = [s.strip().replace('=','').replace('@','') for s in result3.text.split('\n') if s.strip() ]
+        try:
+            browser.get(a)
+            time.sleep(5)
+            result3 = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div.article-text')))
+        
+            splitresult = [s.strip().replace('=','').replace('@','') for s in result3.text.split('\n') if s.strip() ]
 
-        for i in splitresult:
-            if re.fullmatch(r"[가-힣.,!=?\"'()\ ]+", i) :
-                ws[f"A{excelnum+1}"] = i 
-                excelnum+=1
+            for i in splitresult:
+                if re.fullmatch(r"[가-힣.,!=?\"'()\ ]+", i) :
+                    ws[f"A{excelnum+1}"] = i 
+                    excelnum+=1
 
+        except Exception as e:
+            continue
     if num == 334 :
         break
-
     num+=1
 
 num=1
@@ -135,21 +139,22 @@ while True :
     href_list = [el.get_attribute('href') for el in results]
    # href_list2 = [el.get_attribute('href') for el in results2]
     for a in href_list:
-      
-        browser.get(a)
-        time.sleep(5)
-        result3 = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div.article-text')))
-        #print(result3.text)
-        splitresult = [s.strip().replace('=','').replace('@','') for s in result3.text.split('\n') if s.strip() ]
+        try:
+            browser.get(a)
+            time.sleep(5)
+            result3 = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div.article-text')))
+        
+            splitresult = [s.strip().replace('=','').replace('@','') for s in result3.text.split('\n') if s.strip() ]
 
-        for i in splitresult:
-            if re.fullmatch(r"[가-힣.,!=?\"'()\ ]+", i) :
-                ws[f"A{excelnum+1}"] = i 
-                excelnum+=1
+            for i in splitresult:
+                if re.fullmatch(r"[가-힣.,!=?\"'()\ ]+", i) :
+                    ws[f"A{excelnum+1}"] = i 
+                    excelnum+=1
 
+        except Exception as e:
+            continue
     if num == 334 :
         break
-
     num+=1
 
 
@@ -163,21 +168,22 @@ while True :
     href_list = [el.get_attribute('href') for el in results]
    # href_list2 = [el.get_attribute('href') for el in results2]
     for a in href_list:
-      
-        browser.get(a)
-        time.sleep(5)
-        result3 = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div.article-text')))
-        #print(result3.text)
-        splitresult = [s.strip().replace('=','').replace('@','') for s in result3.text.split('\n') if s.strip() ]
+        try:
+            browser.get(a)
+            time.sleep(5)
+            result3 = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div.article-text')))
+        
+            splitresult = [s.strip().replace('=','').replace('@','') for s in result3.text.split('\n') if s.strip() ]
 
-        for i in splitresult:
-            if re.fullmatch(r"[가-힣.,!=?\"'()\ ]+", i) :
-                ws[f"A{excelnum+1}"] = i 
-                excelnum+=1
+            for i in splitresult:
+                if re.fullmatch(r"[가-힣.,!=?\"'()\ ]+", i) :
+                    ws[f"A{excelnum+1}"] = i 
+                    excelnum+=1
 
+        except Exception as e:
+            continue
     if num == 334 :
         break
-
     num+=1
 
 num=1
@@ -190,22 +196,22 @@ while True :
     href_list = [el.get_attribute('href') for el in results]
    # href_list2 = [el.get_attribute('href') for el in results2]
     for a in href_list:
+        try:
+            browser.get(a)
+            time.sleep(5)
+            result3 = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div.article-text')))
         
-        browser.get(a)
-        time.sleep(5)
-        result3 = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div.article-text')))
-     
-        #print(result3.text)
-        splitresult = [s.strip().replace('=','').replace('@','') for s in result3.text.split('\n') if s.strip() ]
+            splitresult = [s.strip().replace('=','').replace('@','') for s in result3.text.split('\n') if s.strip() ]
 
-        for i in splitresult:
-            if re.fullmatch(r"[가-힣.,!=?\"'()\ ]+", i) :
-                ws[f"A{excelnum+1}"] = i 
-                excelnum+=1
+            for i in splitresult:
+                if re.fullmatch(r"[가-힣.,!=?\"'()\ ]+", i) :
+                    ws[f"A{excelnum+1}"] = i 
+                    excelnum+=1
 
+        except Exception as e:
+            continue
     if num == 334 :
         break
-
     num+=1
 
 num=1
@@ -218,21 +224,22 @@ while True :
     href_list = [el.get_attribute('href') for el in results]
    # href_list2 = [el.get_attribute('href') for el in results2]
     for a in href_list:
-      
-        browser.get(a)
-        time.sleep(5)
-        result3 = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div.article-text')))
-        #print(result3.text)
-        splitresult = [s.strip().replace('=','').replace('@','') for s in result3.text.split('\n') if s.strip() ]
+        try:
+            browser.get(a)
+            time.sleep(5)
+            result3 = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div.article-text')))
+        
+            splitresult = [s.strip().replace('=','').replace('@','') for s in result3.text.split('\n') if s.strip() ]
 
-        for i in splitresult:
-            if re.fullmatch(r"[가-힣.,!=?\"'()\ ]+", i) :
-                ws[f"A{excelnum+1}"] = i 
-                excelnum+=1
+            for i in splitresult:
+                if re.fullmatch(r"[가-힣.,!=?\"'()\ ]+", i) :
+                    ws[f"A{excelnum+1}"] = i 
+                    excelnum+=1
 
+        except Exception as e:
+            continue
     if num == 334 :
         break
-
     num+=1
 
 num=1
@@ -245,21 +252,22 @@ while True :
     href_list = [el.get_attribute('href') for el in results]
    # href_list2 = [el.get_attribute('href') for el in results2]
     for a in href_list:
-      
-        browser.get(a)
-        time.sleep(5)
-        result3 = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div.article-text')))
-        #print(result3.text)
-        splitresult = [s.strip().replace('=','').replace('@','') for s in result3.text.split('\n') if s.strip() ]
+        try:
+            browser.get(a)
+            time.sleep(5)
+            result3 = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div.article-text')))
+        
+            splitresult = [s.strip().replace('=','').replace('@','') for s in result3.text.split('\n') if s.strip() ]
 
-        for i in splitresult:
-            if re.fullmatch(r"[가-힣.,!=?\"'()\ ]+", i) :
-                ws[f"A{excelnum+1}"] = i 
-                excelnum+=1
+            for i in splitresult:
+                if re.fullmatch(r"[가-힣.,!=?\"'()\ ]+", i) :
+                    ws[f"A{excelnum+1}"] = i 
+                    excelnum+=1
 
+        except Exception as e:
+            continue
     if num == 334 :
         break
-
     num+=1
 
 num=1
@@ -272,21 +280,22 @@ while True :
     href_list = [el.get_attribute('href') for el in results]
    # href_list2 = [el.get_attribute('href') for el in results2]
     for a in href_list:
-      
-        browser.get(a)
-        time.sleep(5)
-        result3 = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div.article-text')))
-        #print(result3.text)
-        splitresult = [s.strip().replace('=','').replace('@','') for s in result3.text.split('\n') if s.strip() ]
+        try:
+            browser.get(a)
+            time.sleep(5)
+            result3 = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div.article-text')))
+        
+            splitresult = [s.strip().replace('=','').replace('@','') for s in result3.text.split('\n') if s.strip() ]
 
-        for i in splitresult:
-            if re.fullmatch(r"[가-힣.,!=?\"'()\ ]+", i) :
-                ws[f"A{excelnum+1}"] = i 
-                excelnum+=1
+            for i in splitresult:
+                if re.fullmatch(r"[가-힣.,!=?\"'()\ ]+", i) :
+                    ws[f"A{excelnum+1}"] = i 
+                    excelnum+=1
 
+        except Exception as e:
+            continue
     if num == 334 :
         break
-
     num+=1
 
 wb.save(f'뉴스기사수집{datetime.now().date()}.xlsx')
