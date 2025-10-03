@@ -16,7 +16,7 @@ temp_profile_dir = tempfile.mkdtemp() # <- solution
 
 opt = webdriver.ChromeOptions()
 opt.add_argument(f"--user-data-dir={temp_profile_dir}")
-opt.add_argument('--headless')
+#opt.add_argument('--headless')
 opt.add_experimental_option("prefs", {
     "profile.managed_default_content_settings.images": 2,
     "profile.managed_default_content_settings.plugins": 2
@@ -58,7 +58,7 @@ while True :
     for a in href_list:
         try:
             browser.get(a)
-            time.sleep(5)
+            
             result3 = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div.article-text')))
         
             splitresult = [s.strip().replace('=','').replace('@','') for s in result3.text.split('\n') if s.strip() ]
@@ -97,7 +97,7 @@ while True :
     for a in href_list:
         try:
             browser.get(a)
-            time.sleep(5)
+            
             result3 = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div.article-text')))
         
             splitresult = [s.strip().replace('=','').replace('@','') for s in result3.text.split('\n') if s.strip() ]
@@ -135,7 +135,7 @@ while True :
     for a in href_list:
         try:
             browser.get(a)
-            time.sleep(5)
+            
             result3 = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div.article-text')))
         
             splitresult = [s.strip().replace('=','').replace('@','') for s in result3.text.split('\n') if s.strip() ]
@@ -173,7 +173,7 @@ while True :
     for a in href_list:
         try:
             browser.get(a)
-            time.sleep(5)
+            
             result3 = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div.article-text')))
         
             splitresult = [s.strip().replace('=','').replace('@','') for s in result3.text.split('\n') if s.strip() ]
@@ -211,7 +211,7 @@ while True :
     for a in href_list:
         try:
             browser.get(a)
-            time.sleep(5)
+            
             result3 = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div.article-text')))
         
             splitresult = [s.strip().replace('=','').replace('@','') for s in result3.text.split('\n') if s.strip() ]
@@ -249,7 +249,7 @@ while True :
     for a in href_list:
         try:
             browser.get(a)
-            time.sleep(5)
+            
             result3 = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div.article-text')))
         
             splitresult = [s.strip().replace('=','').replace('@','') for s in result3.text.split('\n') if s.strip() ]
@@ -287,7 +287,7 @@ while True :
     for a in href_list:
         try:
             browser.get(a)
-            time.sleep(5)
+            
             result3 = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div.article-text')))
         
             splitresult = [s.strip().replace('=','').replace('@','') for s in result3.text.split('\n') if s.strip() ]
@@ -325,7 +325,7 @@ while True :
     for a in href_list:
         try:
             browser.get(a)
-            time.sleep(5)
+            
             result3 = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div.article-text')))
         
             splitresult = [s.strip().replace('=','').replace('@','') for s in result3.text.split('\n') if s.strip() ]
@@ -363,7 +363,7 @@ while True :
     for a in href_list:
         try:
             browser.get(a)
-            time.sleep(5)
+            
             result3 = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div.article-text')))
         
             splitresult = [s.strip().replace('=','').replace('@','') for s in result3.text.split('\n') if s.strip() ]
