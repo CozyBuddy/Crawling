@@ -19,7 +19,7 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 temp_profile_dir = tempfile.mkdtemp() # <- solution
 
 opt = webdriver.ChromeOptions()
-opt.set_capability("pageLoadStrategy", "eager")
+opt.set_capability("pageLoadStrategy", "normal")
 # opt.add_argument(f"--user-data-dir={temp_profile_dir}")
 #opt.add_argument('--headless')
 opt.add_argument("--disable-extensions")
@@ -41,7 +41,8 @@ opt.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
                  "Chrome/119.0.6045.200 Safari/537.36")
 
 opt.add_argument("--disable-blink-features=AutomationControlled"); 
-
+opt.add_argument("--disable-dev-shm-usage")
+opt.add_argument("--disable-gpu")
 browser = webdriver.Chrome(options=opt )
 browser.set_script_timeout(3)
 browser.set_page_load_timeout(5)
